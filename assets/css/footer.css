@@ -1,0 +1,120 @@
+/* footer.css — Rodapé do site */
+
+.site-footer {
+  background: var(--green-dark);
+  color: #A5D6A7;
+  padding: 64px 0 0;
+}
+
+/* ─── Grid principal ────────────────────────────────────────────────────── */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+}
+
+/* ─── Coluna de marca ──────────────────────────────────────────────────── */
+.footer-col--brand p {
+  color: #C8E6C9;
+  font-size: 14px;
+  line-height: 1.65;
+  margin-top: 20px;
+  max-width: 280px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--green-primary);
+  color: var(--white);
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 14px;
+  transition: background 0.2s, transform 0.2s;
+  text-decoration: none;
+}
+
+.footer-social a:hover {
+  background: var(--green-light);
+  transform: translateY(-2px);
+  color: var(--white);
+}
+
+/* ─── Colunas secundárias ──────────────────────────────────────────────── */
+.footer-col h5 {
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+
+.footer-col a {
+  display: block;
+  color: #A5D6A7;
+  padding: 4px 0;
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-col a:hover {
+  color: var(--white);
+}
+
+.footer-col p {
+  color: #A5D6A7;
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.footer-col p a {
+  display: inline;
+}
+
+/* ─── Rodapé inferior ──────────────────────────────────────────────────── */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 24px 0;
+  margin-top: 48px;
+  text-align: center;
+}
+
+.footer-bottom p {
+  color: #81C784;
+  font-size: 13px;
+}
+
+/* ─── Responsive ────────────────────────────────────────────────────────── */
+@media (max-width: 968px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .footer-col--brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .footer-col--brand {
+    grid-column: auto;
+  }
+}

@@ -1,0 +1,298 @@
+/* header.css — Header, topbar e mega-menu */
+
+/* ─── Top bar ──────────────────────────────────────────────────────────── */
+.header-topbar {
+  height: 36px;
+  background: var(--green-dark);
+  font-size: 13px;
+  overflow: hidden;
+}
+
+.header-topbar__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.header-topbar__contact {
+  display: flex;
+  gap: 24px;
+}
+
+.header-topbar__contact a,
+.header-topbar__social a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.header-topbar__contact a:hover,
+.header-topbar__social a:hover {
+  color: #fff;
+}
+
+/* ─── Main nav bar ─────────────────────────────────────────────────────── */
+.header-main {
+  background: var(--white);
+  height: 72px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.25s;
+}
+
+.header-main.is-scrolled {
+  box-shadow: var(--shadow-md);
+}
+
+.header-main__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* ─── Logo ─────────────────────────────────────────────────────────────── */
+.header-logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.header-logo svg {
+  height: 36px;
+  width: auto;
+}
+
+/* ─── Hambúrguer (mobile) ──────────────────────────────────────────────── */
+.header-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.header-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--gray-700);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+.header-toggle.is-active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.header-toggle.is-active span:nth-child(2) {
+  opacity: 0;
+}
+.header-toggle.is-active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ─── Nav list ─────────────────────────────────────────────────────────── */
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+
+.header-nav > li > a {
+  color: var(--gray-700);
+  font-weight: 500;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+
+.header-nav > li > a:hover {
+  color: var(--green-primary);
+}
+
+.nav-cta {
+  background: var(--green-primary) !important;
+  color: var(--white) !important;
+  padding: 10px 20px;
+  border-radius: var(--radius-sm);
+  font-weight: 600 !important;
+  transition: background 0.2s !important;
+}
+
+.nav-cta:hover {
+  background: var(--green-dark) !important;
+  color: var(--white) !important;
+}
+
+/* ─── Mega-menu (desktop) ──────────────────────────────────────────────── */
+.has-megamenu {
+  position: static;
+}
+
+.megamenu {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 108px; /* topbar(36) + header(72) */
+  background: var(--white);
+  box-shadow: var(--shadow-lg);
+  padding: 32px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity 0.25s, visibility 0.25s, transform 0.25s;
+  z-index: 998;
+  border-top: 2px solid var(--green-pale);
+}
+
+.header-main.is-scrolled ~ * .megamenu,
+.header-main.is-scrolled .megamenu {
+  top: 72px;
+}
+
+.has-megamenu:hover .megamenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.megamenu__inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.megamenu__col h4 {
+  color: var(--green-dark);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid var(--green-pale);
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+}
+
+.megamenu__col h4 ~ h4 { margin-top: 24px; }
+
+.megamenu__col a {
+  display: block;
+  padding: 7px 0;
+  color: var(--gray-700);
+  font-size: 14px;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.megamenu__col a:hover {
+  color: var(--green-primary);
+  transform: translateX(4px);
+}
+
+.see-all {
+  font-weight: 600;
+  color: var(--green-primary) !important;
+  margin-top: 12px;
+  font-size: 13px !important;
+}
+
+/* ─── Mobile (≤ 968px) ─────────────────────────────────────────────────── */
+@media (max-width: 968px) {
+  .header-topbar {
+    display: none;
+  }
+
+  .header-toggle {
+    display: flex;
+  }
+
+  .header-nav {
+    display: none;
+    position: fixed;
+    top: 72px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--white);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0 0 32px;
+    gap: 0;
+    overflow-y: auto;
+    z-index: 999;
+  }
+
+  .header-nav.is-open {
+    display: flex;
+  }
+
+  .header-nav > li {
+    border-bottom: 1px solid var(--gray-100);
+  }
+
+  .header-nav > li > a {
+    display: block;
+    padding: 16px 24px;
+    font-size: 1rem;
+  }
+
+  .nav-cta {
+    margin: 16px 24px 0 !important;
+    border-radius: var(--radius-sm) !important;
+    text-align: center;
+    padding: 14px 24px !important;
+  }
+
+  /* Mega-menu vira accordion no mobile */
+  .megamenu {
+    position: static;
+    opacity: 1;
+    visibility: hidden;
+    transform: none;
+    box-shadow: none;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    border-top: none;
+    transition: max-height 0.35s ease, visibility 0.35s;
+    background: var(--gray-50);
+  }
+
+  .has-megamenu:hover .megamenu {
+    opacity: 1;
+    visibility: hidden;
+    transform: none;
+    max-height: 0;
+  }
+
+  .has-megamenu.is-open .megamenu {
+    visibility: visible;
+    max-height: 2000px;
+  }
+
+  .megamenu__inner {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 8px 0;
+  }
+
+  .megamenu__col {
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--gray-100);
+  }
+
+  .megamenu__col:last-child {
+    border-bottom: none;
+  }
+}

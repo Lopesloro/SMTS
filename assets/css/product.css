@@ -1,0 +1,252 @@
+/* product.css — Páginas de família e produto individual */
+
+/* === HERO de página de família === */
+.family-hero {
+  background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-primary) 100%);
+  color: white;
+  padding: 64px 0 48px;
+}
+.family-hero h1 { color: white; font-size: 2.5rem; margin-bottom: 12px; }
+.family-hero p { color: #C8E6C9; font-size: 1.1rem; max-width: 720px; }
+.family-breadcrumbs { font-size: 0.875rem; color: #A5D6A7; margin-bottom: 16px; }
+.family-breadcrumbs a { color: #A5D6A7; text-decoration: none; }
+.family-breadcrumbs a:hover { color: white; }
+
+/* Variante para breadcrumbs em fundo claro (páginas individuais) */
+.family-breadcrumbs--light { color: var(--gray-500); margin: 24px 0; }
+.family-breadcrumbs--light a { color: var(--green-primary); }
+.family-breadcrumbs--light a:hover { color: var(--green-dark); }
+
+/* === Grid de produtos dentro da página de família === */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  margin-top: 48px;
+}
+.product-card {
+  background: white;
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--green-light);
+}
+.product-card__img {
+  aspect-ratio: 4/3;
+  background: var(--gray-50);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.product-card__img img { width: 100%; height: 100%; object-fit: contain; padding: 16px; transition: transform 0.4s; }
+.product-card:hover .product-card__img img { transform: scale(1.05); }
+.product-card__body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+.product-card__tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  background: var(--green-pale);
+  color: var(--green-dark);
+  margin-bottom: 12px;
+  align-self: flex-start;
+}
+.product-card__tag--legacy { background: var(--gray-100); color: var(--gray-700); }
+.product-card__title { color: var(--green-dark); font-size: 1.5rem; margin-bottom: 4px; }
+.product-card__subtitle { color: var(--gray-500); font-size: 0.9rem; margin-bottom: 16px; }
+.product-card__highlights { list-style: none; padding: 0; margin: 0 0 20px; font-size: 0.875rem; color: var(--gray-700); }
+.product-card__highlights li { padding: 6px 0; border-bottom: 1px dashed var(--gray-100); }
+.product-card__highlights li:last-child { border-bottom: none; }
+.product-card__highlights strong { color: var(--green-dark); }
+.product-card__cta { margin-top: auto; }
+
+/* === Página individual de produto: layout 2 colunas === */
+.product-page-wrap {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 48px;
+  margin: 48px 0 80px;
+}
+@media (max-width: 1024px) {
+  .product-page-wrap { grid-template-columns: 1fr; }
+}
+
+/* === Header do produto === */
+.product-header { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+@media (max-width: 768px) { .product-header { grid-template-columns: 1fr; } }
+.product-header__img {
+  background: var(--gray-50);
+  border-radius: var(--radius-md);
+  aspect-ratio: 4/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.product-header__img img { max-width: 100%; max-height: 100%; object-fit: contain; padding: 24px; }
+.product-header__info h1 { font-size: 2.25rem; color: var(--green-dark); margin-bottom: 8px; }
+.product-header__info .tagline { color: var(--green-primary); font-size: 1.1rem; font-weight: 600; margin-bottom: 16px; }
+.product-header__info .description { color: var(--gray-700); font-size: 1rem; line-height: 1.7; margin-bottom: 24px; }
+.product-header__quick {
+  background: var(--green-pale);
+  border-left: 4px solid var(--green-primary);
+  padding: 16px 20px;
+  border-radius: 4px;
+  margin-bottom: 24px;
+}
+.product-header__quick dl { display: grid; grid-template-columns: auto 1fr; gap: 8px 16px; margin: 0; }
+.product-header__quick dt { color: var(--gray-700); font-size: 0.875rem; font-weight: 600; }
+.product-header__quick dd { color: var(--green-dark); font-size: 0.875rem; font-weight: 700; margin: 0; }
+
+/* === Tabela de especificações === */
+.spec-section { margin-bottom: 48px; }
+.spec-section h2 {
+  color: var(--green-dark);
+  font-size: 1.5rem;
+  padding-bottom: 12px;
+  border-bottom: 3px solid var(--green-primary);
+  margin-bottom: 24px;
+}
+.spec-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.9rem;
+  background: white;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.spec-table thead th {
+  background: var(--green-dark);
+  color: white;
+  text-align: left;
+  padding: 14px 16px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.spec-table thead th:first-child { width: 40%; }
+.spec-table tbody tr { border-bottom: 1px solid var(--gray-100); }
+.spec-table tbody tr:nth-child(even) { background: var(--off-white); }
+.spec-table tbody td {
+  padding: 12px 16px;
+  vertical-align: middle;
+  color: var(--gray-700);
+}
+.spec-table tbody td:first-child {
+  font-weight: 600;
+  color: var(--gray-900);
+  background: var(--gray-50);
+}
+
+/* === Células sim/não/parcial === */
+.cell-yes, .cell-no, .cell-partial {
+  text-align: center;
+  font-weight: 700;
+}
+.cell-yes { background: var(--color-yes-bg) !important; color: var(--color-yes) !important; }
+.cell-no { background: var(--color-no-bg) !important; color: var(--color-no) !important; }
+.cell-partial { background: var(--color-partial-bg) !important; color: var(--color-partial) !important; }
+.cell-yes::before { content: "✓ "; }
+.cell-no::before { content: "✗ "; }
+.cell-partial::before { content: "● "; }
+
+/* Legenda */
+.spec-legend {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+  font-size: 0.8rem;
+}
+.spec-legend span { padding: 4px 10px; border-radius: 4px; font-weight: 600; }
+.spec-legend .lg-yes { background: var(--color-yes-bg); color: var(--color-yes); }
+.spec-legend .lg-no { background: var(--color-no-bg); color: var(--color-no); }
+.spec-legend .lg-partial { background: var(--color-partial-bg); color: var(--color-partial); }
+
+/* === Sidebar Tira-dúvidas === */
+.product-sidebar {
+  position: sticky;
+  top: 96px;
+  align-self: start;
+}
+.qa-box {
+  background: white;
+  border: 2px solid var(--green-primary);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: var(--shadow-md);
+}
+.qa-box h3 { color: var(--green-dark); font-size: 1.25rem; margin-bottom: 6px; }
+.qa-box .qa-sub { font-size: 0.875rem; color: var(--gray-500); margin-bottom: 20px; }
+.qa-box label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--gray-700);
+  margin-bottom: 4px;
+  margin-top: 12px;
+}
+.qa-box input, .qa-box textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--gray-300);
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  transition: var(--transition);
+  box-sizing: border-box;
+}
+.qa-box input:focus, .qa-box textarea:focus {
+  outline: none;
+  border-color: var(--green-primary);
+  box-shadow: 0 0 0 3px var(--green-pale);
+}
+.qa-box textarea { min-height: 80px; resize: vertical; }
+.qa-box button[type="submit"] {
+  width: 100%;
+  margin-top: 16px;
+  padding: 12px;
+  background: var(--green-primary);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 1rem;
+}
+.qa-box button[type="submit"]:hover { background: var(--green-dark); }
+.qa-box .qa-feedback {
+  margin-top: 12px;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  display: none;
+}
+.qa-box .qa-feedback.success { background: var(--color-yes-bg); color: var(--color-yes); display: block; }
+.qa-box .qa-feedback.error { background: var(--color-no-bg); color: var(--color-no); display: block; }
+
+/* === CTA de produto === */
+.product-cta {
+  background: var(--green-pale);
+  padding: 32px;
+  border-radius: var(--radius-md);
+  text-align: center;
+  margin-top: 48px;
+}
+.product-cta h3 { color: var(--green-dark); margin-bottom: 12px; }
+.product-cta p { color: var(--gray-700); margin-bottom: 20px; }
