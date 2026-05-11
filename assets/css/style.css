@@ -133,8 +133,9 @@ a:hover {
 .text-center { text-align: center; }
 .mt-24 { margin-top: 24px; }
 
-/* ─── Logo SVG no footer ────────────────────────────────────────────────── */
-.logo-svg { height: 40px; }
+/* ─── Logo SVG/IMG no footer ────────────────────────────────────────────── */
+.logo-svg { height: 48px; width: auto; display: block; background: #fff; padding: 6px 10px; border-radius: 6px; }
+img.logo-svg { object-fit: contain; }
 
 /* ─── Variantes de seção ────────────────────────────────────────────────── */
 .section--pale { background: var(--green-pale); }

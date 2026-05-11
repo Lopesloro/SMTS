@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="assets/css/header.css" />
   <link rel="stylesheet" href="assets/css/footer.css" />
-  <link rel="stylesheet" href="assets/css/home.css" />
+  <link rel="stylesheet" href="assets/css/home.css?v=4" />
 </head>
 <body>
 
@@ -29,10 +29,7 @@
     <nav class="header-main">
       <div class="container header-main__inner">
         <a href="/index.html" class="header-logo" aria-label="SMT Solutions - Home">
-          <svg viewBox="0 0 220 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <text x="0" y="30" font-family="Inter, sans-serif" font-weight="800" font-size="32" fill="#1B5E20">SMT</text>
-            <text x="78" y="30" font-family="Inter, sans-serif" font-weight="400" font-size="22" fill="#2E7D32">Solutions</text>
-          </svg>
+          <img src="/assets/img/smts-logo.png" alt="SMT Solutions" />
         </a>
         <button class="header-toggle" aria-label="Abrir menu" aria-expanded="false">
           <span></span><span></span><span></span>
@@ -90,23 +87,59 @@
 
   <main>
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container hero__inner">
-        <div class="hero__content">
-          <span class="hero__badge">Representante oficial Yamaha Robotics no Brasil</span>
-          <h1>Soluções completas em montagem eletrônica</h1>
-          <p>Equipamentos Yamaha SMT de alta performance: montadoras, impressoras de pasta, dispensers, inspeção e software de fábrica inteligente. Suporte técnico em todo o Brasil e América do Sul.</p>
-          <div class="hero__cta">
-            <a href="/produtos/surface-mounters.html" class="btn">Conheça os produtos</a>
-            <a href="/contato.html" class="btn btn-outline">Solicitar orçamento</a>
+    <!-- HERO — Linha de produção SMT Yamaha -->
+    <section class="hero-line">
+      <div class="hero-line__bg" aria-hidden="true"></div>
+
+      <div class="container hero-line__inner">
+
+        <!-- Carrossel full-bleed: vista em produção ↔ vista da linha completa -->
+        <div class="line-stage" role="region" aria-label="Linha de produção Yamaha SMT">
+          <div class="line-view line-view--linear">
+            <img src="https://global.yamaha-motor.com/business/smt/concept/img/keyvisual.jpg"
+                 alt="Linha SMT Yamaha em sequência de produção"
+                 loading="eager">
           </div>
+          <div class="line-view line-view--studio">
+            <img src="/assets/img/smts-linha-completa.png"
+                 alt="Linha SMT Yamaha completa — todas as máquinas">
+            <div class="line-view__panel">
+              <p class="line-view__panel-eyebrow">Linha SMT Yamaha completa</p>
+              <h2 class="line-view__panel-title">Todas as máquinas à venda na <span>SMT Soluções</span></h2>
+              <ul class="line-view__machines" aria-label="Máquinas da linha">
+                <li><span>Unloader</span></li>
+                <li><span>Reflow Oven</span></li>
+                <li><span>YSi-V · 3D AOI</span></li>
+                <li><span>YRM20 · Surface Mounter</span></li>
+                <li><span>YRM20 · Surface Mounter</span></li>
+                <li><span>YRM20 · Surface Mounter</span></li>
+                <li><span>YSi-SP · 3D SPI</span></li>
+                <li><span>YRP10 · Solder Printer</span></li>
+                <li><span>Loader</span></li>
+              </ul>
+            </div>
+          </div>
+
         </div>
-        <div class="hero__visual">
-          <img src="https://global.yamaha-motor.com/business/smt/img/index_key_001.jpg"
-               alt="Linha SMT Yamaha"
-               loading="eager"
-               onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 450%22><rect fill=%22%23eeeeee%22 width=%22800%22 height=%22450%22/><text x=%22400%22 y=%22225%22 text-anchor=%22middle%22 fill=%22%23999%22 font-family=%22sans-serif%22 font-size=%2224%22>Yamaha SMT</text></svg>'">
+
+        <div class="line-stage__nav" role="tablist" aria-label="Escolher vista da linha">
+          <button type="button" class="line-stage__dot" data-target="0" aria-label="Vista em produção">
+            <span class="line-stage__dot-label">Em produção</span>
+          </button>
+          <button type="button" class="line-stage__dot" data-target="1" aria-label="Linha completa">
+            <span class="line-stage__dot-label">Linha completa</span>
+          </button>
+        </div>
+
+        <div class="hero-line__intro">
+          <span class="hero-line__badge">Representante oficial Yamaha Robotics no Brasil</span>
+          <h1>A linha SMT Yamaha completa em um só lugar</h1>
+          <p>Da impressão de pasta de solda ao unloader: equipamentos integrados, fábrica inteligente e suporte técnico em todo o Brasil.</p>
+        </div>
+
+        <div class="hero-line__cta">
+          <a href="/produtos/surface-mounters.html" class="btn">Conheça os produtos</a>
+          <a href="/contato.html" class="btn btn-outline">Solicitar orçamento</a>
         </div>
       </div>
     </section>
@@ -297,10 +330,7 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-col footer-col--brand">
-        <svg viewBox="0 0 220 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="logo-svg">
-          <text x="0" y="30" font-family="Inter, sans-serif" font-weight="800" font-size="32" fill="#FFFFFF">SMT</text>
-          <text x="78" y="30" font-family="Inter, sans-serif" font-weight="400" font-size="22" fill="#A5D6A7">Solutions</text>
-        </svg>
+        <img src="/assets/img/smts-logo.png" alt="SMT Solutions" class="logo-svg" />
         <p>Representante oficial Yamaha Robotics no Brasil. Soluções completas em montagem eletrônica desde 2005.</p>
         <div class="footer-social">
           <a href="https://www.linkedin.com/company/smts/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
@@ -337,6 +367,70 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js?v=4"></script>
+
+  <script>
+    (function () {
+      var stage = document.querySelector('.line-stage');
+      var dots = document.querySelectorAll('.line-stage__dot');
+      if (!stage || !dots.length) return;
+      var views = stage.querySelectorAll('.line-view');
+      var resumeTimer = null;
+      var RESUME_DELAY = 10000;
+
+      function applyManual(index) {
+        for (var i = 0; i < views.length; i++) {
+          var v = views[i];
+          v.style.transition = 'transform 0.7s cubic-bezier(0.65,0.05,0.36,1), opacity 0.45s ease';
+          v.style.animation = 'none';
+          if (i === index) {
+            v.style.transform = 'translateX(0)';
+            v.style.opacity = '1';
+            v.style.zIndex = '2';
+          } else {
+            v.style.transform = 'translateX(-100%)';
+            v.style.opacity = '0';
+            v.style.zIndex = '1';
+          }
+        }
+        for (var j = 0; j < dots.length; j++) {
+          if (j === index) {
+            dots[j].classList.add('is-active');
+            dots[j].setAttribute('aria-current', 'true');
+          } else {
+            dots[j].classList.remove('is-active');
+            dots[j].removeAttribute('aria-current');
+          }
+        }
+      }
+
+      function resumeAuto() {
+        for (var i = 0; i < views.length; i++) {
+          var v = views[i];
+          v.style.transition = '';
+          v.style.animation = '';
+          v.style.transform = '';
+          v.style.opacity = '';
+          v.style.zIndex = '';
+        }
+        for (var j = 0; j < dots.length; j++) {
+          dots[j].classList.remove('is-active');
+          dots[j].removeAttribute('aria-current');
+        }
+      }
+
+      for (var k = 0; k < dots.length; k++) {
+        (function (index) {
+          dots[index].addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            applyManual(index);
+            if (resumeTimer) clearTimeout(resumeTimer);
+            resumeTimer = setTimeout(resumeAuto, RESUME_DELAY);
+          });
+        })(k);
+      }
+    })();
+  </script>
 </body>
 </html>

@@ -61,9 +61,11 @@
   flex-shrink: 0;
 }
 
-.header-logo svg {
-  height: 36px;
+.header-logo svg,
+.header-logo img {
+  height: 60px;
   width: auto;
+  display: block;
 }
 
 /* ─── Hambúrguer (mobile) ──────────────────────────────────────────────── */

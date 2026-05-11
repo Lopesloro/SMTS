@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git remote *)",
+      "Bash(git push *)",
+      "Bash(git branch *)",
+      "Bash(git fetch *)",
+      "Bash(git merge *)",
+      "WebFetch(domain:global.yamaha-motor.com)",
+      "Bash(python -m http.server 8765)",
+      "Bash(curl *)",
+      "Bash(pkill -f \"http.server 8765\")",
+      "Bash(mkdir -p \"C:/Users/betem/OneDrive/Área de Trabalho/SMTS/smts-site/assets/img\")",
+      "Bash(cp \"/c/Users/betem/Downloads/smts maquinas juntas.png\" \"C:/Users/betem/OneDrive/Área de Trabalho/SMTS/smts-site/assets/img/smts-linha-completa.png\")",
+      "WebSearch",
+      "Bash(command -v python python3 node)",
+      "Bash(python -m http.server 8000)"
+    ]
+  }
+}
